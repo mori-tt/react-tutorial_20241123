@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import EventList from "./pages/EventList";
 import EventDetail from "./pages/EventDetail";
@@ -7,7 +7,7 @@ import EventConfirm from "./pages/EventConfirm";
 
 export default function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <Routes>
         <Route index element={<Navigate to="/events" />} />
         <Route path="events" element={<Layout />}>
@@ -18,6 +18,6 @@ export default function App() {
         </Route>
         <Route path="*" element={<p>404 not found</p>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
