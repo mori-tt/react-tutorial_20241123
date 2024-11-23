@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import EventList from "./pages/EventList";
 import EventDetail from "./pages/EventDetail";
@@ -7,7 +7,7 @@ import EventConfirm from "./pages/EventConfirm";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route index element={<Navigate to="/events" />} />
         {/* ネストしたルート */}
@@ -21,6 +21,6 @@ export default function App() {
         {/* 存在しないURLの処理 */}
         <Route path="*" element={<p>404 not found</p>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
